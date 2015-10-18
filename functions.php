@@ -60,7 +60,7 @@ function build_jsonldBreadcrumb(){
 	// <meta property="position" content="{NUM}">
 	//----------------------------------------------
 	$next = 2;
-	if ( !is_page() )
+	if ( is_single() or is_home())
 	{
 		//-------------------------------------
 		// we have a blog "post" 
@@ -74,19 +74,37 @@ function build_jsonldBreadcrumb(){
 					  );
 		$next = 3;
 	}
+	if ( is_single() or is_page() or is_tag() or is_category()) {
+	
+	//----------------------------------
+	// is it a tag?
+	//----------------------------------
+	if ( is_tag() )
+	{
+		$title  = single_tag_title("", false);
+		$tag_id = get_term_by('name', $title, 'post_tag');
+		$url    = get_tag_link($tag_id->term_id);
+	}
+	
+	if ( is_category() )
+	{
+		$title  = single_cat_title("", false);
+		$category_id = get_cat_ID( $title );
+        $url = get_category_link( $category_id );
+	}
 	
 	$itemList[] = array(
 						  "@type" => "ListItem",
 						  "position" => $next,
-						  "item" => array('@id' => $url,'name' => $title),
+						  "item" => array('@id' => $url, 'name' => $title),
 					  );
 					  
-	
+	}
 	$jsonLD["itemListElement"] = $itemList;
 	/*echo '<pre>';
 	print_r(json_encode($jsonLD));
 	echo '</pre>';*/
-	if ( (is_page() OR is_single()) AND (! is_front_page()) ) {
+	if ( (is_page() OR is_single() or is_home() or is_tag() or is_category()) AND (! is_front_page()) ) {
 	echo '<script type="application/ld+json">';
 	echo json_encode($jsonLD);
 	echo '</script>';
