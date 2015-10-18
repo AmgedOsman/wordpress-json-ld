@@ -92,17 +92,17 @@ function jsonLD(){
 	  // You can add different name
 	  //-------------------------------
 	  $jsonLD["alternateName"] = "أمجد عثمان";
-	  $jsonLD["logo"] = "https://amged.me/cdn/images/static/amged_logo-a-lato2_300x248.png";
+	  $jsonLD["logo"] = "https://domain.me/cdn/images/static/logo_a-lato2_300x248.png";
 	  $jsonLD["url"] = $home_url;
 	  $jsonLD["sameAs"] = array(
-		"https://twitter.com/Amged",
-		"https://www.facebook.com/mamgedosman",
-		"https://www.linkedin.com/in/amgedosman",
-		"https://instagram.com/amgedosman/",
-		"https://soundcloud.com/amgedosman",
-		"https://www.pinterest.com/amgedosman/",
-		"https://plus.google.com/+AmgedOsmanGP/",
-		"https://www.youtube.com/user/mamgedosman",
+		"https://twitter.com/username",
+		"https://www.facebook.com/username",
+		"https://www.linkedin.com/in/username",
+		"https://instagram.com/username/",
+		"https://soundcloud.com/username",
+		"https://www.pinterest.com/username/",
+		"https://plus.google.com/+username/",
+		"https://www.youtube.com/user/username",
 		
 	  );
 
@@ -114,7 +114,7 @@ function jsonLD(){
 		array(
 		  "@type" => "ContactPoint",
 		  "telephone" => "+966 500 000 000",
-		  "email" => "ao@amged.me",
+		  "email" => "user@domain.me",
 		  "contactType" => "sales",
 		  "availableLanguage" => array(
 											"English",
@@ -130,7 +130,7 @@ function jsonLD(){
 	  $jsonLD["potentialAction"] = array(
 		array(
 		  "@type" => "SearchAction",
-		  "target" => "https://amged.me/?s={searchTerm}",
+		  "target" => "https://domain.com/?s={searchTerm}",
 		  "query-input" => "required name=searchTerm"
 		)
 	  );
