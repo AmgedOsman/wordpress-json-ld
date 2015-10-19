@@ -7,11 +7,12 @@ Copy the content of [functions.php](https://github.com/AmgedOsman/wordpress-json
 and let it do the magic
 
 This will generate JSON-LD for WordPress:
-* Homepage
-* Articles
-* Author Pages
-* Breadcrumbs for Articles & Pages
-* Supports Site Search (Need to be edited manually in jsonld.php file
+- Breadcrumbs for Articles, Pages, Posts Page, Tags, Categories
+- It also supports Sitelinks Search Box
+- Also it use's the blog name from WP Settings directly (no need to type in)
+- Multiple languages (Arabic for example?)  i've added the alternativeName
+- It also adds the post excerpt as description
+- Completely rewrote the user profiles to check if the field had been filled by the author, if not it won't display it (no need to add them manually)
 
 
 In general, please make sure to review the codes and change my information to urs
